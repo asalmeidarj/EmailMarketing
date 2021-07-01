@@ -251,6 +251,7 @@ td, th {
 }
 .imagem-beneficios:hover {
 	opacity: 0.70;
+	
 	/*transform: scale(1.1);*/
 }
 

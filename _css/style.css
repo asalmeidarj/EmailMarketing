@@ -109,11 +109,13 @@ footer {
 		width: 100%;
 		height: calc(100vh - 70px);
 		background: #333333;
+		transition: background 1s;
 	}
+
 
 	#nav.active li {
 		display: block;
-		transition: background 1s;
+		transition: background 1s, color 1s;
 		padding: 10px 10px 10px 0px;
 		vertical-align: center;
 	}

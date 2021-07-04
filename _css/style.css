@@ -14,7 +14,8 @@ a:link {
 
 /* link que foi visitado */
 a:visited {
-    text-decoration: overline;
+	color:#dbdbdb;
+   text-decoration: overline;
 }
 
 #header {
@@ -41,20 +42,20 @@ a:visited {
 	position: absolute;
 	top: 30px;
 	right: 30px;
-}
-
-#nav li {
-		display: inline-block;
-		padding-left: 	20px;
-}
-
-
-#nav a {
 	text-transform: uppercase;
 	color: #dbdbdb;
 	font-weight: bold;
 	font-size: 14px;
-	/*padding: 5px 10px 4px 10px;*/
+}
+
+#nav li {
+		display: inline-block;
+		padding-left: 	10px;
+}
+
+
+#nav a {
+	padding: 5px 10px 4px 10px;
 	text-decoration: none;
 	transition: color	 1s;
 }
@@ -85,17 +86,34 @@ footer {
 		display: none;
 	}
 
+	#nav #menu {
+		display: absolute;
+		top: 70px;
+		left: 0;
+		width: 100%;
+		height: 0;
+		background: #333333;
+		visibility: hidden;
+		overflow-y: hidden;
+	}
+
 	#btn-menu {
-		display: block;
+		display: flex;
 		position: absolute;
 		right: 0px;
 		top: 40px;
 		margin-top: -45px;
+		padding: 0.5rem 0.5rem;
+		background: none;
+		border:  none;
+		cursor: pointer;
+		gap: 0.5rem;
+		color:  #dbdbdb;
 	}
 
 
 	#nav.active #btn-menu {
-		display: block;
+		display: flex;
 		position: absolute;
 		right: 30px;
 		top: 0;
@@ -110,6 +128,13 @@ footer {
 		height: calc(100vh - 70px);
 		background: #333333;
 		transition: background 1s;
+		z-index: 1000;
+
+	}
+
+	#nav.active #menu {
+		visibility: visible;
+		overflow-y: visible;
 	}
 
 
@@ -140,6 +165,36 @@ footer {
 
 	}
 
+	#hamburguer {
+		width:  20px;
+		border-top: 2px solid;
+		color: #dbdbdb;
+	}
+
+	#hamburguer::after, #hamburguer::before {
+		content: '';
+		display: block;
+		width: 20px;
+		height: 2px;
+		background: currentColor;
+		margin-top: 5px;
+		transition: 0.6s;
+		position: relative;
+	}
+
+	#nav.active #hamburguer {
+		border-top-color: transparent;
+	}
+
+	#nav.active #hamburguer::before {
+		transform: rotate(135deg);
+
+	}
+
+	#nav.active #hamburguer::after {
+		transform: rotate(-135deg);		
+		top: -7px;
+	}
 
 }
 
